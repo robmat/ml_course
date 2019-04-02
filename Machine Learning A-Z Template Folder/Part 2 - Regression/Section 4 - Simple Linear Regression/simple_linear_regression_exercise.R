@@ -14,6 +14,8 @@ test_set = subset(dataset, split == FALSE)
 # Feature Scaling
 # training_set = scale(training_set)
 # test_set = scale(test_set)
+regressor = lm(formula = Salary ~ YearsExperience,
+               data = training_set)
 y_pred = predict(regressor, newdata = test_set)
 y_pred_train = predict(regressor, newdata = training_set)
 
